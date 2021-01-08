@@ -1,0 +1,43 @@
+constraints         =  all-bonds ; contraintes sur les longueur de liaison
+                                 ; rappel constraints != restraints
+integrator          =  md        ; algorithme utilise : dynamique moleculaire 
+dt                  =  0.002     ; pas d'integration en ps
+                                 ; valeur liee a "constraints = all-bonds"
+nsteps              =  50000000      ; total 100 ns
+
+nstxout             =  500000     ; freq d'ecriture des positions des atomes dans le .trr
+nstvout             =  500000     ; freq d'ecriture des vitesses des atomes dans le .trr
+nstxtcout           =  5000       ; freq d'ecriture des positions des atomes dans le .xtc 
+nstlog              =  500       ; freq d'ecriture dans le .log
+nstenergy           =  500       ; freq d'ecriture des energies dans le .edr
+
+; non bonded stuff
+nstlist		=  10		 ; voisin mis a jour tous les 10 pas
+rlist 		=  1.0		 ; 
+coulombtype            = PME
+fourierspacing         = 0.12
+pme_order              = 4
+rcoulomb               = 1.0
+rvdw                   = 1.0
+
+energygrps = POPC SOL TO
+; Temperature coupling is on the whole system
+Tcoupl              =  v-rescale          ; algo couplage a la temperature
+tc-grps             =  POPC SOL TO  		; groupes pour les thermostats
+tau_t               =  0.1 0.1  0.1         ; temps de couplage a la temperature (en ps)
+ref_t               =  300 300  300           ; temperature de reference pour chaque groupe (en K)
+
+; Pressure coupling is on the whole system
+Pcoupl              =  Parrinello-Rahman          ; algo couplage a la pression
+Pcoupltype			=  Semiisotropic
+tau_p               =  4.0 4.0                ; temps de couplage a la pression (en ps)
+compressibility     =  4.5e-5 4.5e-5            ; compressibilite du milieu (ici l'eau) (en bar-1)
+ref_p               =  1.0  1.0             ; pression de reference (en bar)
+
+
+pbc=xyz
+
+#Reprise des temperatures et vitesses de l'equilibration
+gen-vel             =no 
+gen-temp            = 300
+gen-seed            = 173529

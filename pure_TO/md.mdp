@@ -1,0 +1,42 @@
+constraints         =  all-bonds ; contraintes sur les longueur de liaison
+                                 ; rappel constraints != restraints
+integrator          =  md        ; algorithme utilise : dynamique moleculaire 
+dt                  =  0.002     ; pas d'integration en ps
+tinit		    =  0         ; valeur liee a "constraints = all-bonds"
+nsteps              =  50000000      ; total 100 ns
+nstcomm                = 1
+nstxout                = 50000
+nstvout                = 50000
+nstfout                = 0
+;Simulation de 100ns, on sauvegarde toutes les 10ps.
+nstxtcout              = 5000
+xtc_precision          = 1000
+nstlist                = 10
+
+
+coulombtype            = PME
+fourierspacing         = 0.12
+pme_order              = 4
+rcoulomb               = 1.0
+rvdw                   = 1.0
+
+energygrps= TO
+; Temperature coupling is on the whole system
+Tcoupl              =  v-rescale          ; algo complage a la temperature
+tc-grps             =  TO   ; groupes pour les thermostats
+tau_t               =  0.1          ; temps de couplage a la temperature (en ps)
+ref_t               =  300             ; temperature de reference 
+                                          ; pour chaque groupe (en K)
+
+; Pressure coupling is on the whole system
+Pcoupl              =  parrinello-Rahman         ; algo complage a la pression
+Pcoupltype	    =  isotropic
+tau_p               =  1.0                ; temps de couplage a la pression (en ps)
+compressibility     =  4.5e-5         ; compressibilite du milieu (ici l'eau) (en bar-1)
+ref_p               =  1.0             ; pression de reference (en bar)
+
+
+pbc=xyz
+gen-vel             = yes
+gen-temp            = 300
+gen-seed            = 56324

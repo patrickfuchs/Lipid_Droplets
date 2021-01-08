@@ -1,0 +1,22 @@
+; topology for a pure D0PC bilayer with 200 lipids and 7943 SPC water
+; molecules
+#include "ffgmx.itp"
+#include "lipid.itp"
+#include "popc.itp"
+#include "triolein.itp"
+
+;ifdef FLEX_SPC
+;include "flexspc.itp"
+;else
+#include "spc.itp"
+;endif
+
+[ system ]
+; name
+Pure POPC bilayer with 200 lipids and 7943 water molecules + 204 TO
+
+[ molecules ]
+; name	number
+POPC    200
+SOL 7941
+TO 204

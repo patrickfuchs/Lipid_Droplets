@@ -1,0 +1,16 @@
+;	This is my topology file
+;	108 triolein molecules
+;
+; Include forcefield parameters
+
+#include "ffgmx.itp"
+#include "lipid.itp"
+#include "triolein.itp"
+
+[ system ]
+; Name
+108 TRIOLEIN
+
+[ molecules ]
+; Compound        #mols
+TO  	 	    108
