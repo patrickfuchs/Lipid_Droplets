@@ -42,7 +42,7 @@ J. Phys. Chem. B., 112, 13772-13782.
 Molecular dynamics simulation of a polyunsaturated lipid bilayer susceptible to lipid peroxidation.
 J. Phys. Chem. B., 108, 7170-7179.
 
-[5] Hess, B., C. Kutzner, ., E. Lindahl. 2008. 
+[5] Hess, B., C. Kutzner, ..., E. Lindahl. 2008. 
 GROMACS 4: algorithms for highly efficient, load-balanced, and scalable molecular simulation.
 J. Chem. Theory Comput., 4, 435-447.
 
