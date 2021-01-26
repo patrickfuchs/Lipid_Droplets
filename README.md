@@ -18,11 +18,13 @@ These two systems correspond to the entries `pureTO` and `LD0` in table 1 of ref
 
 ## Force field
 
-The POPC parameters (`popc.itp`) come from the Berger force field [2]. The TO parameters (`triolein.itp`) were adapted from Berger by Vattulainen and co-workers [3]. Typically, starting from a POPC molecule, the sn-3 was replaced by an oleoyl chain. For all oleoyl chains both in POPC and TO, a correction on the double bond [4] was applied. All the systems were simulated with GROMACS 4 [6].
+The POPC parameters (`popc.itp`) come from the Berger force field [2] as implemented in GROMACS by Peter Tieleman (see [here](http://wcm.ucalgary.ca/tieleman/downloads)). The TO parameters (`triolein.itp`) were adapted from Berger by Vattulainen and co-workers [3]. Typically, starting from a POPC molecule, the sn-3 was replaced by an oleoyl chain. For all oleoyl chains both in POPC and TO, a correction on the double bond [4] was applied. All the systems were simulated with GROMACS 4 [6]. 
 
 If you use these files, please cite Bacle et al. (2017) [1] and Hall et al. (2008) [3].
 
 We kindly thank Ilpo Vattulainen for sharing the triolein parameters.
+
+Note: Technically, the files in this repo make use of the so called *ffgmx* force field (based on a modified GROMOS 87), which was the standard way to simulate Berger lipids as implemented by [Peter Tieleman]((http://wcm.ucalgary.ca/tieleman/downloads)). However, *ffgmx* has been deprecated in recent GROMACS versions (5.0.* and above). The files (`ffgmx.itp`, etc.) can be found on old versions 4.5.* and below within any GROMACS archive on the [GROMACS download page](https://manual.gromacs.org/). If you use lipids only (POPC and TO), as in our work [1], there is no problem, this is the classical method for simulating Berger lipids. However, if you plan to use the files in this repo with proteins, you might want to use a more recent GROMOS force field as described in [Justin Lemkul's tutorial](http://www.mdtutorials.com/gmx/membrane_protein/02_topology.html).
 
 ## References
 
