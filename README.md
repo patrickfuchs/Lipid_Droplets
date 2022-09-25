@@ -40,7 +40,7 @@ Biophys. J., 72, 2002-2013.
 Modeling of the triglyceride-rich core in lipoprotein particles.
 J. Phys. Chem. B., 112, 13772-13782.
 
-[4] Bachar M., P. Brunelle, A. Rauk. 2004. 
+[4] Bachar M., P. Brunelle, D.P. Tieleman, and A. Rauk. 2004. 
 Molecular dynamics simulation of a polyunsaturated lipid bilayer susceptible to lipid peroxidation.
 J. Phys. Chem. B., 108, 7170-7179.
 
